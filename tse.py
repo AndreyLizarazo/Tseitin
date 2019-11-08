@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # Subrutinas para la transformacion de una
 # formula a su forma clausal
 
@@ -62,8 +60,8 @@ def Tseitin(A, letrasProposicionalesA):
             L.append(atomo + '=' + '-' + s)
             A = A[0]
             s = A[0]
-        if len(A) > 0:
-            s = A[0]
+            if len(A) > 0:
+                s = A[0]
         elif s == ')':
             w = Pila[-1]
             O = Pila[-2]
@@ -76,20 +74,20 @@ def Tseitin(A, letrasProposicionalesA):
         else:
             Pila.append(s)
             A = A[1:]
-        if len(A) > 0:
-            s = A[0]
+            if len(A) > 0:
+                s = A[0]
 
-            B = ""
-        if i < 0:
-            atomo = Pila[-1]
-        else:
-            atomo = letrasProposicionalesB[i]
-        for x in L:
-            y = enFNC(x)
-            B += "Y" + y
+    B = ""
+    if i < 0:
+        atomo = Pila[-1]
+    else:
+        atomo = letrasProposicionalesB[i]
+    for x in L:
+        y = enFNC(x)
+        B += "Y" + y
 
-        B = atomo + B
-        return B
+    B = atomo + B
+    return B
 
 # Subrutina Clausula para obtener lista de literales
 # Input: C (cadena) una clausula
@@ -136,7 +134,8 @@ def formaClausal(A):
 #Test Tseitin()
 # Descomente el siguiente código y corra el presente archivo
 #formula = "(pYq)"
-#print(Tseitin(formula)) # Debe obtener AYpO-AYqO-AY-pO-qOA (la A tiene una raya encima)
+#letrasProposicionalesA = ["p","q"]
+#print(Tseitin(formula, letrasProposicionalesA)) # Debe obtener AYpO-AYqO-AY-pO-qOA (la A tiene una raya encima)
 
 # Test Clausula()
 # Descomente el siguiente código y corra el presente archivo
