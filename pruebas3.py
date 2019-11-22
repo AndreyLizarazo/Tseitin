@@ -251,7 +251,7 @@ def unitPropagate(S, I):
 
 def DPLL(s, i):
     void = []
-	
+
     s, i = unitPropagate(s,i)
     if void in s:
         return "Insatisfacible", {}
@@ -341,6 +341,7 @@ f[1]
 f[0]
 print(f[0])
 u = quitar(f[1])
-print(u)
-print(len(u))
+ print(u)
+# print(len(u))
+#d = {'a': 0, 'A': 1, 'b': 0, 'B': 1, 'c': 0, 'C': 1, 'd': 0, 'D': 1, 'e': 0, 'E': 1, 'f': 0, 'F': 1, 'g': 0, 'G': 1, 'h': 0, 'H': 1, 'i': 1, 'I': 0, 'j': 0, 'J': 1, 'k': 0, 'K': 1, 'l': 0, 'L': 1, 'm': 1, 'M': 0, 'n': 0, 'N': 1, 'q': 0, 'Q': 1, 'p': 1, 'P': 0}
 ax.create_situation(u)
